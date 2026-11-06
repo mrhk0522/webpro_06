@@ -27,6 +27,16 @@ app.get("/keiyo_add", (req, res) => {
   res.redirect('/public/keiyo_add.html');
 });
 
+let movies = [
+    { id: 1, title: "アベンジャーズ／エンドゲーム", genre: "アクション" },
+    { id: 2, title: "ホーム・アローン", genre: "コメディ" },
+    { id: 3, title: "インターステラー", genre: "SF" }
+];
+
+app.get("/movies", (req, res) => {
+    res.render("movies", { data: movies });
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";

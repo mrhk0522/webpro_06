@@ -37,6 +37,16 @@ app.get("/movies", (req, res) => {
     res.render("movies", { data: movies });
 });
 
+app.get("/movies_add", (req, res) => {
+  let id = req.query.id;
+  let title = req.query.title;
+  let genre = req.query.genre;
+  let newdata = { id: id, title: title, genre: genre };
+  movies.push( newdata );
+  res.redirect('/public/movies_add.html');
+});
+
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
